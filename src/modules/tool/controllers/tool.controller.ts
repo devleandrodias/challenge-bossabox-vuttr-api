@@ -16,7 +16,9 @@ import { CreateToolDto } from '../dtos/create-tool.dto';
 import { UpdateToolDto } from '../dtos/update-tool.dto';
 import { GenericResult } from 'src/shared/models/generic-result.model';
 import { GenericMessage } from 'src/shared/enums/generic-messages.enum';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('tools')
 @Controller('tools')
 export class ToolController {
   constructor(private readonly toolService: ToolService) {}
