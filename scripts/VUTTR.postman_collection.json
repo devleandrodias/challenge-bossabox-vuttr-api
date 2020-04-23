@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "0ffbcc6c-f7d5-45e4-90fc-af1806fe2227",
+    "name": "VUTTR",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tools - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/tools",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["tools"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tools - Get By Tag",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/tools/tag?tag=node",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["tools", "tag"],
+          "query": [
+            {
+              "key": "tag",
+              "value": "node"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tools - Post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"title\": \"Fastify\",\r\n\t\"link\": \"https://www.fastify.io\",\r\n\t\"description\": \"Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.\",\r\n\t\"tags\": [\r\n\t\t\"web\",\r\n\t\t\"framework\",\r\n\t\t\"node\",\r\n\t\t\"http2\",\r\n\t\t\"https\",\r\n\t\t\"localhost\"\r\n\t]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/tools",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["tools"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tool - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/tools/{id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["tools", "{id}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tool - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"title\": \"Fastify Update 2\",\r\n\t\"link\": \"https://www.fastify.io.up\",\r\n\t\"description\": \"Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.\",\r\n\t\"tags\": [\r\n\t\t\"web\",\r\n\t\t\"framework\",\r\n\t\t\"node\",\r\n\t\t\"java script\"\r\n\t]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/tools/5ea0e7d691d7ac5190a1831c",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["tools", "5ea0e7d691d7ac5190a1831c"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
