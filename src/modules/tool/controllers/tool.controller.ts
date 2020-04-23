@@ -12,7 +12,7 @@ import { GenericResult } from 'src/shared/models/generic-result.model';
 import { GenericMessage } from 'src/shared/enums/generic-messages.enum';
 import { Tool } from '../model/tool.model';
 
-@Controller()
+@Controller('tools')
 export class ToolController {
   constructor(private readonly toolService: ToolService) {}
 
