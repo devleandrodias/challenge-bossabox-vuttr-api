@@ -13,6 +13,10 @@ export class ToolService {
     return await new this.toolModel(data).save();
   }
 
+  async update(id: string, data: Tool): Promise<Tool> {
+    return await this.toolModel.findByIdAndUpdate(id, data);
+  }
+
   async findAll() {
     return await this.toolModel.find().exec();
   }

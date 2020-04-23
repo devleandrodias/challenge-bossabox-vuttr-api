@@ -7,12 +7,14 @@ import {
   Post,
   Delete,
   Param,
+  Put,
 } from '@nestjs/common';
 import { CreateToolDto } from '../dtos/create-tool.dto';
 import { ToolService } from '../services/tool.service';
 import { GenericResult } from 'src/shared/models/generic-result.model';
 import { GenericMessage } from 'src/shared/enums/generic-messages.enum';
 import { Tool } from '../model/tool.model';
+import { UpdateToolDto } from '../dtos/update-tool.dto';
 
 @Controller('tools')
 export class ToolController {
@@ -21,6 +23,11 @@ export class ToolController {
   @Get()
   async get() {
     return await this.toolService.findAll();
+  }
+
+  @Get()
+  async getByTag() {
+    // TODO: implementar /tools?tag=node
   }
 
   @Post()
@@ -43,6 +50,30 @@ export class ToolController {
       );
     } catch (error) {
       return new HttpException(
+        new GenericResult(
+          GenericMessage.NotExecutableAction,
+          false,
+          null,
+          error,
+        ),
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
+
+  @Put(':id')
+  async update(@Param('id') id: string, @Body() data: UpdateToolDto) {
+    try {
+      await this.toolService.update(id, data);
+
+      return new GenericResult(
+        GenericMessage.SuccessExecutableAction,
+        true,
+        data,
+        null,
+      );
+    } catch (error) {
+      new HttpException(
         new GenericResult(
           GenericMessage.NotExecutableAction,
           false,

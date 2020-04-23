@@ -9,6 +9,7 @@ import { ToolModule } from './modules/tool/tool.module';
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
+      useFindAndModify: false,
     }),
     ToolModule,
   ],
