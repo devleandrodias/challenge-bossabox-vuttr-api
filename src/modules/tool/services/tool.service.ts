@@ -9,16 +9,24 @@ import { ITool } from '../interfaces/tool.interface';
 export class ToolService {
   constructor(@InjectModel('Tool') private readonly toolModel: Model<ITool>) {}
 
+  async findAll() {
+    return await this.toolModel.find().exec();
+  }
+
+  async findAllByTag(tag: string) {
+    return await this.toolModel
+      .find({
+        tags: tag,
+      })
+      .exec();
+  }
+
   async create(data: Tool): Promise<Tool> {
     return await new this.toolModel(data).save();
   }
 
   async update(id: string, data: Tool): Promise<Tool> {
     return await this.toolModel.findByIdAndUpdate(id, data);
-  }
-
-  async findAll() {
-    return await this.toolModel.find().exec();
   }
 
   async remove(id: string) {

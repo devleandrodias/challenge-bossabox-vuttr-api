@@ -8,6 +8,7 @@ import {
   Delete,
   Param,
   Put,
+  Query,
 } from '@nestjs/common';
 import { Tool } from '../model/tool.model';
 import { ToolService } from '../services/tool.service';
@@ -25,9 +26,9 @@ export class ToolController {
     return await this.toolService.findAll();
   }
 
-  @Get()
-  async getByTag() {
-    // TODO: implementar /tools?tag=node
+  @Get('tag')
+  async getByTag(@Query('tag') tag: string) {
+    return await this.toolService.findAllByTag(tag);
   }
 
   @Post()
