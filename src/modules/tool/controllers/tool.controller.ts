@@ -9,12 +9,12 @@ import {
   Param,
   Put,
 } from '@nestjs/common';
-import { CreateToolDto } from '../dtos/create-tool.dto';
+import { Tool } from '../model/tool.model';
 import { ToolService } from '../services/tool.service';
+import { CreateToolDto } from '../dtos/create-tool.dto';
+import { UpdateToolDto } from '../dtos/update-tool.dto';
 import { GenericResult } from 'src/shared/models/generic-result.model';
 import { GenericMessage } from 'src/shared/enums/generic-messages.enum';
-import { Tool } from '../model/tool.model';
-import { UpdateToolDto } from '../dtos/update-tool.dto';
 
 @Controller('tools')
 export class ToolController {
