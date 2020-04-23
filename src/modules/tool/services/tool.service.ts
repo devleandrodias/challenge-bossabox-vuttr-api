@@ -16,4 +16,8 @@ export class ToolService {
   async findAll() {
     return await this.toolModel.find().exec();
   }
+
+  async remove(id: string) {
+    return await this.toolModel.findByIdAndDelete(id);
+  }
 }
