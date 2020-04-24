@@ -21,6 +21,7 @@ async function bootstrap() {
     .setLicense('The MIT License', 'https://opensource.org/licenses/MIT')
     .setVersion('1.0.0')
     .addTag('tools')
+    .addTag('auth')
     .setContact(
       'Leandro Dias',
       'https://app.bossabox.com/u/leandro-dias-y2fa86zp',
