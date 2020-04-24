@@ -7,6 +7,7 @@ import {
   Param,
   Put,
   Query,
+  UseInterceptors,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { ToolService } from '../services/tool.service';
