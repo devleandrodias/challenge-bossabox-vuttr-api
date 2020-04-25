@@ -60,9 +60,9 @@ export class ToolService {
 
   async create(data: CreateToolDto) {
     try {
-      const { title, link, description, tags } = data;
-
       if (this._validation.validate(data)) {
+        const { title, link, description, tags } = data;
+
         const tool = await this._repository.create(
           new Tool(title, link, description, tags),
         );

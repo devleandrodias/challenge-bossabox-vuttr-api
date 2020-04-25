@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Tool } from '../model/tool.model';
-import { ITool } from '../interfaces/model/tool.interface';
+import { ITool } from '../interfaces/models/tool.interface';
 import { IToolRepository } from '../interfaces/repositories/tool.interface';
 
 @Injectable()

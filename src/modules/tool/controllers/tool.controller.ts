@@ -7,8 +7,9 @@ import {
   Param,
   Put,
   Query,
-  UseInterceptors,
+  UseGuards,
 } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
 import { ToolService } from '../services/tool.service';
 import { CreateToolDto } from '../dtos/create-tool.dto';
@@ -20,8 +21,10 @@ export class ToolController {
   constructor(private readonly _service: ToolService) {}
 
   @Get()
+  @UseGuards(AuthGuard())
   public async get() {
-    return await this._service.findAll();
+    return 'Autentificado...';
+    // await this._service.findAll();
   }
 
   @Get('tag')
